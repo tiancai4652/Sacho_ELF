@@ -10,10 +10,12 @@ namespace CaptureImage_Test
     {
         static void Main(string[] args)
         {
-            var image = CaptureImage.CaptureImage.GetFullScreen();
+            //var image = CaptureImage.CaptureImage.GetFullScreen();
+            //CaptureImage.CaptureImage.SaveImage(@"C:\Users\zr644\Desktop\A", image);
+
+            var imageFull = CaptureImage.CaptureImage.GetFullScreen();
+            var image = CaptureImage.CaptureImage.GetScreenByPoint(539,285,706,343, imageFull);
             CaptureImage.CaptureImage.SaveImage(@"C:\Users\zr644\Desktop\A", image);
-
-
         }
     }
 }
