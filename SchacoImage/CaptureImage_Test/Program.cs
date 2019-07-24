@@ -14,7 +14,7 @@ namespace CaptureImage_Test
             //CaptureImage.CaptureImage.SaveImage(@"C:\Users\zr644\Desktop\A", image);
 
             var imageFull = CaptureImage.CaptureImage.GetFullScreen();
-            var image = CaptureImage.CaptureImage.GetScreenByPoint(539,285,706,343, imageFull);
+            var image = CaptureImage.CaptureImage.GetScreenByPoint(539,285,706,343);
             CaptureImage.CaptureImage.SaveImage(@"C:\Users\zr644\Desktop\A", image);
         }
     }

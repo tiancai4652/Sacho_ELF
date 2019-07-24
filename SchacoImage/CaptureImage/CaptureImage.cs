@@ -36,7 +36,7 @@ namespace CaptureImage
             bmp.Dispose();
         }
 
-        public static Image GetScreenByPoint(int x, int y, int width, int height,Image img)
+        public static Image GetScreenByPoint(int x, int y, int width, int height)
         {
             GraphicsPath regionFillPath = new GraphicsPath { FillMode = FillMode.Winding };
             Rectangle rectangle = new Rectangle(x, y, width, height);
@@ -46,6 +46,7 @@ namespace CaptureImage
 
             if (resultArea.IsValid())
             {
+                Image img = GetFullScreen();
                 using (Bitmap bmp = img.CreateEmptyBitmap())
                 using (Graphics g = Graphics.FromImage(bmp))
                 using (TextureBrush brush = new TextureBrush(img))
