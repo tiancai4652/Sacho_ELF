@@ -74,8 +74,16 @@
     <Compile Include="CaptureImage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Dll\" />
+    <Content Include="Dll\ImageListView.dll" />
+    <Content Include="Dll\Interop.IWshRuntimeLibrary.dll" />
+    <Content Include="Dll\Interop.Shell32.dll" />
+    <Content Include="Dll\Newtonsoft.Json.dll" />
+    <Content Include="Dll\ShareX.HelpersLib.dll" />
+    <Content Include="Dll\ShareX.ImageEffectsLib.dll" />
+    <Content Include="Dll\ShareX.MediaLib.dll" />
+    <Content Include="Dll\ShareX.ScreenCaptureLib.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
