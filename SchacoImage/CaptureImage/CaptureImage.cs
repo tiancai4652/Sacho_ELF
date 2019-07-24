@@ -32,7 +32,7 @@ namespace CaptureImage
         {
             Bitmap bmp = new Bitmap(image);
             //保存到磁盘文件
-            bmp.Save(filename, image.RawFormat);
+            bmp.Save(filename);
             bmp.Dispose();
         }
 
