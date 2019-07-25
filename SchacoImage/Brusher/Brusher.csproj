@@ -71,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ACtions.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -115,6 +116,10 @@
     <ProjectReference Include="..\CaptureImage\CaptureImage.csproj">
       <Project>{f594941f-5a8d-4031-9083-50059550c05f}</Project>
       <Name>CaptureImage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IdentifyImageByBaiduAI\IdentifyImageByBaiduAI.csproj">
+      <Project>{6de10240-90b5-415b-9dfa-6edc1d1e1d6d}</Project>
+      <Name>IdentifyImageByBaiduAI</Name>
     </ProjectReference>
     <ProjectReference Include="..\Identify_OpenCV\ImageIdentify.csproj">
       <Project>{9d0fa1c7-d728-4900-a4e9-1e344beeebf4}</Project>

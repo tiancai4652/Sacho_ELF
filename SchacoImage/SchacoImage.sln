@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TessdataIdentify", "Tessdat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageIdentify_Test", "ConsoleApp1\ImageIdentify_Test.csproj", "{17EF3AE2-3109-4C4F-A282-EB8942883DEC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{1E841272-98E5-4B54-AB5B-710491EF8D7D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{17EF3AE2-3109-4C4F-A282-EB8942883DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17EF3AE2-3109-4C4F-A282-EB8942883DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17EF3AE2-3109-4C4F-A282-EB8942883DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E841272-98E5-4B54-AB5B-710491EF8D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E841272-98E5-4B54-AB5B-710491EF8D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E841272-98E5-4B54-AB5B-710491EF8D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E841272-98E5-4B54-AB5B-710491EF8D7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{02245395-6D60-4A86-8713-8874243428DB} = {909E1D69-0A0B-40AC-8964-CF0CF4416582}
 		{A84EF364-E540-459A-A471-7604D62E3E39} = {909E1D69-0A0B-40AC-8964-CF0CF4416582}
 		{17EF3AE2-3109-4C4F-A282-EB8942883DEC} = {07672179-C945-4552-B453-936754F15579}
+		{1E841272-98E5-4B54-AB5B-710491EF8D7D} = {07672179-C945-4552-B453-936754F15579}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF4A5EF5-77F3-4DD0-BD47-422BF1714E7E}
