@@ -15,7 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using MouseLocation;
+using MouseAction;
 using ImageIdentify;
 
 namespace Brusher
@@ -33,7 +33,7 @@ namespace Brusher
             {
                 while (true)
                 {
-                    var point = global::MouseLocation.MouseLocation.GetMouseLocation();
+                    var point = global::MouseAction.DD_MouseMove.GetMouseLocation();
                     PointModel.X = point.X;
                     PointModel.Y = point.Y;
                     Thread.Sleep(100);
@@ -99,13 +99,13 @@ namespace Brusher
             while (true)
             {
 
-                MouseLocation.MouseLocation.SetMouseLocation(new System.Drawing.Point(PointModel.StValueX, PointModel.StValueY));
+                MouseAction.DD_MouseMove.SetMouseLocation(new System.Drawing.Point(PointModel.StValueX, PointModel.StValueY));
                 Thread.Sleep(100);
                 Click();
                 Thread.Sleep(100);
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveCurrentImage();
@@ -113,7 +113,7 @@ namespace Brusher
                 ///跟第一个图片对比
                 if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image1_3Item) < 0.0001)
                 {
-                    MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item2);
+                    MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.Item2);
                     Thread.Sleep(100);
                     Click();
                     Thread.Sleep(100);
@@ -121,7 +121,7 @@ namespace Brusher
                 Thread.Sleep(100);
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveCurrentImage();
@@ -129,7 +129,7 @@ namespace Brusher
                 ///跟第一个图片对比
                 if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image2_Enter2Item) < 0.0001)
                 {
-                    MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
+                    MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
                     Click();
                     Thread.Sleep(100);
@@ -137,7 +137,7 @@ namespace Brusher
                 Thread.Sleep(100);
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveCurrentImage();
@@ -145,7 +145,7 @@ namespace Brusher
                 ///跟第一个图片对比
                 if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image3_Enter2Item) < 0.0001)
                 {
-                    MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
+                    MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
                     Click();
                     Thread.Sleep(100);
@@ -153,7 +153,7 @@ namespace Brusher
                 Thread.Sleep(100);
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveCurrentImage();
@@ -161,7 +161,7 @@ namespace Brusher
                 ///跟第一个图片对比
                 if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image4_Enter2Item) < 0.0001)
                 {
-                    MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
+                    MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
                     Click();
                     Thread.Sleep(100);
@@ -169,7 +169,7 @@ namespace Brusher
                 Thread.Sleep(100);
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveCurrentImage();
@@ -177,7 +177,7 @@ namespace Brusher
                 ///跟第一个图片对比
                 if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image5_Enter2Item) < 0.0001)
                 {
-                    MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item2);
+                    MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.Item2);
                     Thread.Sleep(100);
                     Click();
                     Thread.Sleep(100);
@@ -185,7 +185,7 @@ namespace Brusher
                 Thread.Sleep(100);
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveCurrentImage();
@@ -193,7 +193,7 @@ namespace Brusher
                 ///跟第一个图片对比
                 if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image6_Enter3Item) < 0.0001)
                 {
-                    MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
+                    MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
                     Click();
                     Thread.Sleep(100);
@@ -201,7 +201,7 @@ namespace Brusher
                 Thread.Sleep(100);
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveCurrentImage();
@@ -213,7 +213,7 @@ namespace Brusher
                 }
 
                 ///移开鼠标
-                MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.OutItem);
+                MouseAction.DD_MouseMove.SetMouseLocation(ItemLocation.OutItem);
                 Thread.Sleep(100);
                 ///截取当前图片
                 ImageComare.GetAndSaveESCImage();

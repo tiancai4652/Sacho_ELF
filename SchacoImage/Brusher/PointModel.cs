@@ -37,7 +37,7 @@ namespace Brusher
 
         public void SetValue()
         {
-            global::MouseLocation.MouseLocation.SetMouseLocation(new Point(StValueX, StValueY));
+            global::MouseAction.DD_MouseMove.SetMouseLocation(new Point(StValueX, StValueY));
         }
 
     }

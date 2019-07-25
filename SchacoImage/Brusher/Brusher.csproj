@@ -111,14 +111,12 @@
       <Project>{9d0fa1c7-d728-4900-a4e9-1e344beeebf4}</Project>
       <Name>ImageIdentify</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MouseLocation\MouseLocation.csproj">
+    <ProjectReference Include="..\MouseLocation\MouseAction.csproj">
       <Project>{7f64038f-8d07-43d6-9103-2738b59fce35}</Project>
-      <Name>MouseLocation</Name>
+      <Name>MouseAction</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\DD81200x64.32.dll" />
-    <Content Include="bin\Debug\DD81200x64.64.dll" />
     <Resource Include="Image\esc.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

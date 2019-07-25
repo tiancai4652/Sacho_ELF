@@ -155,9 +155,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MouseLocation\MouseLocation.csproj">
+    <ProjectReference Include="..\MouseLocation\MouseAction.csproj">
       <Project>{7f64038f-8d07-43d6-9103-2738b59fce35}</Project>
-      <Name>MouseLocation</Name>
+      <Name>MouseAction</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
