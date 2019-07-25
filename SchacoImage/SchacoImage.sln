@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageIdentify", "Identify_O
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{909E1D69-0A0B-40AC-8964-CF0CF4416582}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MouseAction", "MouseAction", "{262F8C28-58E1-4B75-86C3-99C18219F871}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoukeydAction", "MoukeydAction", "{262F8C28-58E1-4B75-86C3-99C18219F871}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseAction", "MouseLocation\MouseAction.csproj", "{7F64038F-8D07-43D6-9103-2738B59FCE35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputAction", "MouseLocation\InputAction.csproj", "{7F64038F-8D07-43D6-9103-2738B59FCE35}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseLocationTest", "LocationTest\MouseLocationTest.csproj", "{B703D20F-8A13-46AD-857D-1C2D24EC76D6}"
 EndProject

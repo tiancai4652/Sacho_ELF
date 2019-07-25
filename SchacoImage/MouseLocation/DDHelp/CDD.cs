@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 
-namespace MouseAction
+namespace InputAction
 {
     public enum KeyModifiers        //组合键枚举
     {

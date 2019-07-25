@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MouseAction
+namespace InputAction
 {
-    public class DD_MouseMove
+    public class MouseMove
     {
         [DllImport("user32.dll")]
         private static extern bool GetCursorPos(out TempPoint lpPoint);

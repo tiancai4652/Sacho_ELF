@@ -6,13 +6,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MouseAction
+namespace InputAction
 {
-    public class DD_MouseClick
+    public class DD_ACtion
     {
         static CDD dd;
 
-        static DD_MouseClick()
+        static DD_ACtion()
         {
             dd = new CDD();
             string path = "Dll\\DD81200x64.32.dll";
