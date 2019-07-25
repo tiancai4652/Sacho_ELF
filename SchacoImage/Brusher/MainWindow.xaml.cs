@@ -1,4 +1,4 @@
-﻿using Identify_OpenCV;
+﻿
 using ImageComare;
 using System;
 using System.Collections.Generic;
@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MouseLocation;
+using ImageIdentify;
 
 namespace Brusher
 {
@@ -110,7 +111,7 @@ namespace Brusher
                 ImageComare.GetAndSaveCurrentImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image1_3Item) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image1_3Item) < 0.0001)
                 {
                     MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item2);
                     Thread.Sleep(100);
@@ -126,7 +127,7 @@ namespace Brusher
                 ImageComare.GetAndSaveCurrentImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image2_Enter2Item) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image2_Enter2Item) < 0.0001)
                 {
                     MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
@@ -142,7 +143,7 @@ namespace Brusher
                 ImageComare.GetAndSaveCurrentImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image3_Enter2Item) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image3_Enter2Item) < 0.0001)
                 {
                     MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
@@ -158,7 +159,7 @@ namespace Brusher
                 ImageComare.GetAndSaveCurrentImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image4_Enter2Item) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image4_Enter2Item) < 0.0001)
                 {
                     MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
@@ -174,7 +175,7 @@ namespace Brusher
                 ImageComare.GetAndSaveCurrentImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image5_Enter2Item) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image5_Enter2Item) < 0.0001)
                 {
                     MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item2);
                     Thread.Sleep(100);
@@ -190,7 +191,7 @@ namespace Brusher
                 ImageComare.GetAndSaveCurrentImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image6_Enter3Item) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image6_Enter3Item) < 0.0001)
                 {
                     MouseLocation.MouseLocation.SetMouseLocation(ItemLocation.Item1);
                     Thread.Sleep(100);
@@ -206,7 +207,7 @@ namespace Brusher
                 ImageComare.GetAndSaveCurrentImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.ImageWrongImage) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.ImageWrongImage) < 0.0001)
                 {
                     Thread.Sleep(60000);
                 }
@@ -218,7 +219,7 @@ namespace Brusher
                 ImageComare.GetAndSaveESCImage();
                 Thread.Sleep(100);
                 ///跟第一个图片对比
-                if (Identify.CompareImageByHistogram(ImageComare.ImageCurrentESC, ImageComare.ImageESC) < 0.0001)
+                if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrentESC, ImageComare.ImageESC) < 0.0001)
                 {
                     PressESC();
                     Thread.Sleep(60000);

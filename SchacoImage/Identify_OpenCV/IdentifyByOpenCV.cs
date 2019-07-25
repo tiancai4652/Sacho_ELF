@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identify_OpenCV
+namespace ImageIdentify
 {
-    public class Identify
+    public class IdentifyByOpenCV
     {
         /// <summary>
         ///  CV_TM_SQDIFF 平方差匹配法：该方法采用平方差来进行匹配；最好的匹配值为0；匹配越差，匹配值越大。

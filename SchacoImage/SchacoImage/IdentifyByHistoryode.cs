@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SchacoImage
 {
-    public class Class1
+    public class IdentifyByHistoryode
     {
         class FindSmallImgInBig
         {       /// <summary>

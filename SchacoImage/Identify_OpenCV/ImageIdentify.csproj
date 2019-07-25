@@ -10,8 +10,8 @@
     <ProjectGuid>{9D0FA1C7-D728-4900-A4E9-1E344BEEEBF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Identify_OpenCV</RootNamespace>
-    <AssemblyName>Identify_OpenCV</AssemblyName>
+    <RootNamespace>ImageIdentify</RootNamespace>
+    <AssemblyName>ImageIdentify</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,8 +72,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Identify.cs" />
-    <Compile Include="KMP.cs" />
+    <Compile Include="IdentifyByHistoryode.cs" />
+    <Compile Include="IdentifyByOpenCV.cs" />
+    <Compile Include="IdentifyByKMP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

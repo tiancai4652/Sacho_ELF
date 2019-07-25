@@ -107,9 +107,9 @@
       <Project>{f594941f-5a8d-4031-9083-50059550c05f}</Project>
       <Name>CaptureImage</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Identify_OpenCV\Identify_OpenCV.csproj">
+    <ProjectReference Include="..\Identify_OpenCV\ImageIdentify.csproj">
       <Project>{9d0fa1c7-d728-4900-a4e9-1e344beeebf4}</Project>
-      <Name>Identify_OpenCV</Name>
+      <Name>ImageIdentify</Name>
     </ProjectReference>
     <ProjectReference Include="..\MouseLocation\MouseLocation.csproj">
       <Project>{7f64038f-8d07-43d6-9103-2738b59fce35}</Project>

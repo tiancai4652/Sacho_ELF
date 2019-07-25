@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Identify_OpenCV
+namespace ImageIdentify
 {
-    public class KMP
+    public class IdentifyByKMP
     {
         /// <summary>
         /// 串的模式匹配 KMP算法

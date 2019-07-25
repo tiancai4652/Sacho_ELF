@@ -65,7 +65,7 @@ namespace CaptureImage
             return new Rectangle(ScreenToClient(r.Location), r.Size);
         }
 
-        public static Point ScreenToClient(Point p)
+        static Point ScreenToClient(Point p)
         {
             int screenX = NativeMethods.GetSystemMetrics(SystemMetric.SM_XVIRTUALSCREEN);
             int screenY = NativeMethods.GetSystemMetrics(SystemMetric.SM_YVIRTUALSCREEN);

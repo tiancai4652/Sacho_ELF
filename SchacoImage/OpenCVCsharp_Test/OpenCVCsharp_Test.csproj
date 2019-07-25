@@ -74,9 +74,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Identify_OpenCV\Identify_OpenCV.csproj">
+    <ProjectReference Include="..\Identify_OpenCV\ImageIdentify.csproj">
       <Project>{9d0fa1c7-d728-4900-a4e9-1e344beeebf4}</Project>
-      <Name>Identify_OpenCV</Name>
+      <Name>ImageIdentify</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
