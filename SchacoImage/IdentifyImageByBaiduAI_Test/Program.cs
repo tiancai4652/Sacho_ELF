@@ -19,7 +19,7 @@ namespace IdentifyImageByBaiduAI_Test
             string path = @"C:\Users\Administrator\Desktop\新建文件夹\333.png";
             //string path1 = @"C: \Users\Administrator\Desktop\新建文件夹\1_3Item_1.png";
             //ConvertorColor(path, path1);
-           var x= IdentifyImageByBaiduAI.IdentifyImageByBaiduAI2.Identify(path);
+           //var x= IdentifyImageByBaiduAI.IdentifyImageByBaiduAI2.Identify(path);
         }
 
 
