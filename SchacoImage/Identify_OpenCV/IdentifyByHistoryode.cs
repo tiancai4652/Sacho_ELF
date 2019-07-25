@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace ImageIdentify
 {
+    /// <summary>
+    /// 祖传代码，没试验过
+    /// </summary>
     public class IdentifyByHistoryode
     {
         class FindSmallImgInBig

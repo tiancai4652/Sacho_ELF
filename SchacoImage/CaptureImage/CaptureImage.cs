@@ -13,6 +13,10 @@ namespace CaptureImage
 {
     public class CaptureImage
     {
+        /// <summary>
+        /// 获取全屏截图
+        /// </summary>
+        /// <returns></returns>
         public static Image GetFullScreen()
         {
             Screenshot screenshot = new Screenshot()
@@ -28,6 +32,11 @@ namespace CaptureImage
             return img;
         }
 
+        /// <summary>
+        /// 保存图片
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="image"></param>
         public static void SaveImage(string filename,Image image)
         {
             Bitmap bmp = new Bitmap(image);
@@ -36,7 +45,15 @@ namespace CaptureImage
             bmp.Dispose();
         }
 
-        public static Image GetScreenByPoint(int x, int y, int width, int height)
+        /// <summary>
+        /// 获取区域截图
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static Image GetScreenByRegion(int x, int y, int width, int height)
         {
             GraphicsPath regionFillPath = new GraphicsPath { FillMode = FillMode.Winding };
             Rectangle rectangle = new Rectangle(x, y, width, height);

@@ -31,18 +31,18 @@ namespace Brusher
 
         public void Compare()
         {
-            var ImageTarget = CaptureImage.CaptureImage.GetScreenByPoint(X, Y, W, H);
+            var ImageTarget = CaptureImage.CaptureImage.GetScreenByRegion(X, Y, W, H);
         }
 
         public static void GetAndSaveCurrentImage()
         {
-            var image = CaptureImage.CaptureImage.GetScreenByPoint(X, Y, W, H);
+            var image = CaptureImage.CaptureImage.GetScreenByRegion(X, Y, W, H);
             CaptureImage.CaptureImage.SaveImage(ImageCurrent, image);
         }
 
         public static void GetAndSaveESCImage()
         {
-            var image = CaptureImage.CaptureImage.GetScreenByPoint(2793, 389, 156, 298);
+            var image = CaptureImage.CaptureImage.GetScreenByRegion(2793, 389, 156, 298);
             CaptureImage.CaptureImage.SaveImage(ImageCurrentESC, image);
         }
     }

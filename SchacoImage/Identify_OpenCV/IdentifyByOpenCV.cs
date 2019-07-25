@@ -12,10 +12,11 @@ namespace ImageIdentify
         /// <summary>
         ///  CV_TM_SQDIFF 平方差匹配法：该方法采用平方差来进行匹配；最好的匹配值为0；匹配越差，匹配值越大。
         ///  CV_TM_CCORR 相关匹配法：该方法采用乘法操作；数值越大表明匹配程度越好。
-　　　　///　CV_TM_CCOEFF 相关系数匹配法：1表示完美的匹配；-1表示最差的匹配。
-　　　　///　CV_TM_SQDIFF_NORMED 归一化平方差匹配法
+        　　　　///　CV_TM_CCOEFF 相关系数匹配法：1表示完美的匹配；-1表示最差的匹配。
+        　　　　///　CV_TM_SQDIFF_NORMED 归一化平方差匹配法
         ///  CV_TM_CCORR_NORMED 归一化相关匹配法
-        //  /CV_TM_CCOEFF_NORMED 归一化相关系数匹配法
+        ///  CV_TM_CCOEFF_NORMED 归一化相关系数匹配法
+        ///  通过模板匹配，用来寻找在一个大图里小图的匹配，受算法影响(templateMatchMode)来看minx越小越好或者max越大越好
         /// </summary>
         /// <param name="sourceImahe"></param>
         /// <param name="targetImage"></param>
@@ -34,10 +35,15 @@ namespace ImageIdentify
             Cv2.MinMaxLoc(mat3, out minx, out max, out minLocation, out maxLocation);
         }
 
-
+        /// <summary>
+        /// 通过直方图比较
+        /// </summary>
+        /// <param name="sourceImage"></param>
+        /// <param name="targetImage"></param>
+        /// <param name="method"></param>
+        /// <returns></returns>
         public static double CompareImageByHistogram(string sourceImage, string targetImage, HistCompMethods method= HistCompMethods.KLDiv)
         {
-           
             using (Mat source = new Mat(sourceImage, ImreadModes.AnyColor | ImreadModes.AnyDepth))
             using (Mat target = new Mat(targetImage, ImreadModes.AnyColor | ImreadModes.AnyDepth))
             {
@@ -74,10 +80,7 @@ namespace ImageIdentify
 
                 //比较直方图
                 double s1coms2 = Cv2.CompareHist(Img2, Img3, method);
-
                 return s1coms2;
-
-
             }
         }
 

@@ -37,7 +37,7 @@ namespace LocationTest
 
         public void SetValue()
         {
-            InputAction.MouseMove.SetMouseLocation(new Point(StValueX, StValueY));
+            InputAction.MouseMove.SetMouseScreenLocation(new Point(StValueX, StValueY));
         }
 
     }

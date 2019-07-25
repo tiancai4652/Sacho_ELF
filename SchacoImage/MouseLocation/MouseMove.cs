@@ -33,7 +33,11 @@ namespace InputAction
             return new Point(tp.X, tp.Y);
         }
 
-        public static Point GetMouseLocation()
+        /// <summary>
+        /// 获取当前鼠标位于屏幕的位置
+        /// </summary>
+        /// <returns></returns>
+        public static Point GetMouseScreenLocation()
         {
             var p = new TempPoint();
             if (GetCursorPos(out p))
@@ -43,7 +47,11 @@ namespace InputAction
             return new Point(0,0);
         }
 
-        public static void SetMouseLocation(Point point)
+        /// <summary>
+        /// 设置鼠标位于屏幕的位置
+        /// </summary>
+        /// <param name="point"></param>
+        public static void SetMouseScreenLocation(Point point)
         {
             SetCursorPos(point.X, point.Y);
         }

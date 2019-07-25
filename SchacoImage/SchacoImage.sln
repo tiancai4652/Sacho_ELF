@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageIdentify", "Identify_OpenCV\ImageIdentify.csproj", "{9D0FA1C7-D728-4900-A4E9-1E344BEEEBF4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Image", "Image", "{909E1D69-0A0B-40AC-8964-CF0CF4416582}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ImageCaptureAndIdentity", "ImageCaptureAndIdentity", "{909E1D69-0A0B-40AC-8964-CF0CF4416582}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MoukeydAction", "MoukeydAction", "{262F8C28-58E1-4B75-86C3-99C18219F871}"
 EndProject

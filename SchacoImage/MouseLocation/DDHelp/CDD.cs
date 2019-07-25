@@ -20,7 +20,7 @@ namespace InputAction
         右下 = 4,
         右上 = 8
     } 
-    class CDD
+    public class CDD
     {
         [DllImport("Kernel32")]
         private static extern System.IntPtr LoadLibrary(string dllfile);

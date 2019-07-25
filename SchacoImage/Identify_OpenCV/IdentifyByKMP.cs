@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ImageIdentify
 {
+    /// <summary>
+    /// KMP算法，没试验过
+    /// </summary>
     public class IdentifyByKMP
     {
         /// <summary>

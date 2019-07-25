@@ -8,23 +8,40 @@ using System.Windows.Forms;
 
 namespace InputAction
 {
+    /// <summary>
+    /// 使用DD模块模拟键盘鼠标操作
+    /// 使用前必须先调用LoadDll，引用项目中LoadDllFile需要管理员权限
+    /// 如果不想给主程序加入管理员权限，请在主程序中复制LoadDllFile方法，并将dd参数传入
+    /// </summary>
     public class DD_ACtion
     {
         static CDD dd;
 
-        static DD_ACtion()
+        /// <summary>
+        /// 使用前调用，需要管理员权限
+        /// </summary>
+        public static void LoadDll()
         {
             dd = new CDD();
             string path = "Dll\\DD81200x64.32.dll";
-            if (!LoadDllFile(path))
+            if (!LoadDllFile(path,out dd))
             {
                 throw new Exception();
             }
         }
 
-        static bool LoadDllFile(string dllfile)
+        /// <summary>
+        /// 使用前调用，不需要管理员权限
+        /// </summary>
+        /// <param name="_dd"></param>
+        public static void SetDD(CDD _dd)
         {
+            dd = _dd;
+        }
 
+        static bool LoadDllFile(string dllfile, out CDD dd)
+        {
+            dd = new CDD();
             System.IO.FileInfo fi = new System.IO.FileInfo(dllfile);
             if (!fi.Exists)
             {
@@ -40,7 +57,7 @@ namespace InputAction
         }
 
         /// <summary>
-        /// 鼠标左键点击
+        /// 鼠标左键点击,使用前必须先调用LoadDll或SetDD方法
         /// </summary>
         /// <param name="MouseDownDurationDelay">鼠标按下持续时间</param>
         /// <param name="AfterClickDelay">鼠标点击后的延迟(多次连续点击间的延迟)</param>
@@ -53,7 +70,7 @@ namespace InputAction
         }
 
         /// <summary>
-        /// 鼠标右键点击
+        /// 鼠标右键点击,使用前必须先调用LoadDll或SetDD方法
         /// </summary>
         /// <param name="MouseDownDurationDelay">鼠标按下持续时间</param>
         /// <param name="AfterClickDelay">鼠标点击后的延迟(多次连续点击间的延迟)</param>
@@ -66,7 +83,7 @@ namespace InputAction
         }
 
         /// <summary>
-        /// 键盘按键
+        /// 键盘按键,使用前必须先调用LoadDll或SetDD方法
         /// </summary>
         /// <param name="key">要按的键</param>
         /// <param name="KeyKeepDownDelay">键触底时间</param>
@@ -85,5 +102,6 @@ namespace InputAction
                 throw new Exception("No Kyes in the Dictionary.");
             }
         }
+
     }
 }

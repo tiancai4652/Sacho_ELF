@@ -29,7 +29,7 @@ namespace LocationTest
             {
                 while (true)
                 {
-                    var point = InputAction.MouseMove.GetMouseLocation();
+                    var point = InputAction.MouseMove.GetMouseScreenLocation();
                     PointModel.X = point.X;
                     PointModel.Y = point.Y;
                     Thread.Sleep(100);
