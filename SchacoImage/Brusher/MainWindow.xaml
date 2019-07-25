@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Brusher"
         mc:Ignorable="d"
-         Title="MainWindow" Height="400" Width="600" Closing="Window_Closing" Loaded="Window_Loaded">
+         Title="MainWindow" Height="400" Width="600" Closing="Window_Closing" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,11 +27,11 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">X:</TextBlock>
-                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.X}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.X}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">Y:</TextBlock>
-                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.Y}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.Y}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -45,11 +45,11 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">X:</TextBlock>
-                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.StValueX}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.StValueX}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">Y:</TextBlock>
-                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.StValueY}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.StValueY}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                     <Button Grid.Row="2" Height="25" Width="80" Click="Button_Click">Set</Button>
                 </Grid>
@@ -89,11 +89,11 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">X:</TextBlock>
-                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.X}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.X}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">Y:</TextBlock>
-                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.Y}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.Y}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -107,11 +107,11 @@
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">X:</TextBlock>
-                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.StValueX}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.StValueX}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">Y:</TextBlock>
-                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding PointModel.StValueY}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.StValueY}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                     <Button Grid.Row="2" Height="25" Width="80" Click="Button_Click">Set</Button>
                 </Grid>

@@ -10,36 +10,25 @@ namespace InputAction
 {
     /// <summary>
     /// 使用DD模块模拟键盘鼠标操作
-    /// 使用前必须先调用LoadDll，引用项目中LoadDllFile需要管理员权限
-    /// 如果不想给主程序加入管理员权限，请在主程序中复制LoadDllFile方法，并将dd参数传入
     /// </summary>
     public class DD_ACtion
     {
         static CDD dd;
 
         /// <summary>
-        /// 使用前调用，需要管理员权限
+        /// 此操作需要管理员权限
         /// </summary>
-        public static void LoadDll()
+        static DD_ACtion()
         {
             dd = new CDD();
             string path = "Dll\\DD81200x64.32.dll";
-            if (!LoadDllFile(path,out dd))
+            if (!LoadDllFile(path))
             {
                 throw new Exception();
             }
         }
 
-        /// <summary>
-        /// 使用前调用，不需要管理员权限
-        /// </summary>
-        /// <param name="_dd"></param>
-        public static void SetDD(CDD _dd)
-        {
-            dd = _dd;
-        }
-
-        static bool LoadDllFile(string dllfile, out CDD dd)
+        static bool LoadDllFile(string dllfile)
         {
             dd = new CDD();
             System.IO.FileInfo fi = new System.IO.FileInfo(dllfile);

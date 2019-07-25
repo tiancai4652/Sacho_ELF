@@ -29,47 +29,52 @@ namespace Brusher
         {
             //InputAction.DD_ACtion.LoadDll();
             InitializeComponent();
-            PointModel = new PointModel();
+            CurrentMousePoint = new PointModel();
             Task.Run(() =>
             {
                 while (true)
                 {
                     var point = global::InputAction.MouseMove.GetMouseScreenLocation();
-                    PointModel.X = point.X;
-                    PointModel.Y = point.Y;
+                    CurrentMousePoint.X = point.X;
+                    CurrentMousePoint.Y = point.Y;
                     Thread.Sleep(100);
                 }
             });
             this.DataContext = this;
         }
+
         Thread tr;
 
-        public PointModel PointModel { get; set; }
+        /// <summary>
+        /// 鼠标当前点
+        /// </summary>
+        public PointModel CurrentMousePoint { get; set; }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PointModel.SetValue();
+            CurrentMousePoint.SetValue();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            InputAction.MouseMove.SetMouseScreenLocation(new System.Drawing.Point(PointModel.StValueX, PointModel.StValueY));
-            InputAction.DD_ACtion.MouseLeftClick();
-            InputAction.DD_ACtion.Keyboard(Keys.F);
+            // Test Code
+            //InputAction.MouseMove.SetMouseScreenLocation(new System.Drawing.Point(PointModel.StValueX, PointModel.StValueY));
+            //InputAction.DD_ACtion.MouseLeftClick();
+            //InputAction.DD_ACtion.Keyboard(Keys.F);
 
-            //if (PointModel.StValueX == 0 || PointModel.StValueY == 0)
-            //{
-            //    return;
-            //}
+            if (CurrentMousePoint.StValueX == 0 || CurrentMousePoint.StValueY == 0)
+            {
+                return;
+            }
 
-            //if (this.WindowState == WindowState.Normal)
-            //{
-            //    this.WindowState = WindowState.Minimized;
-            //}
+            if (this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Minimized;
+            }
 
-            //Thread tr = new Thread(Run);
-            //tr.IsBackground = true;
-            //tr.Start();
+            Thread tr = new Thread(Run);
+            tr.IsBackground = true;
+            tr.Start();
         }
 
         void Run()
@@ -77,7 +82,7 @@ namespace Brusher
             while (true)
             {
 
-                InputAction.MouseMove.SetMouseScreenLocation(new System.Drawing.Point(PointModel.StValueX, PointModel.StValueY));
+                InputAction.MouseMove.SetMouseScreenLocation(new System.Drawing.Point(CurrentMousePoint.StValueX, CurrentMousePoint.StValueY));
                 Thread.Sleep(100);
                 InputAction.DD_ACtion.MouseLeftClick();
                 Thread.Sleep(100);
@@ -222,36 +227,6 @@ namespace Brusher
             }
             catch
             { }
-        }
-
-        static CDD dd;
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            //InputAction.DD_ACtion.LoadDll();
-
-            CDD dd = new CDD();
-            string path = "Dll\\DD81200x64.32.dll";
-            if (!LoadDllFile(path))
-            {
-                throw new Exception();
-            }
-        }
-
-        static bool LoadDllFile(string dllfile)
-        {
-            System.IO.FileInfo fi = new System.IO.FileInfo(dllfile);
-            if (!fi.Exists)
-            {
-                System.Windows.Forms.MessageBox.Show("文件不存在");
-                return false;
-            }
-            int ret = dd.Load(dllfile);
-            if (ret == -2) { System.Windows.Forms.MessageBox.Show("装载库时发生错误"); return false; }
-            if (ret == -1) { System.Windows.Forms.MessageBox.Show("取函数地址时发生错误"); return false; }
-            if (ret == 0) { /*System.Windows.Forms.MessageBox.Show("非增强模块"); */}
-
-            return true;
         }
     }
 }
