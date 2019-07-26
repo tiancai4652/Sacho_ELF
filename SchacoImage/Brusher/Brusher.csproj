@@ -76,6 +76,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Helper\IniFile.cs" />
     <Compile Include="ImageComare.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -83,9 +84,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MouseLocation.cs" />
-    <Compile Include="PointModel.cs" />
-    <Compile Include="PointRecord.cs" />
+    <Compile Include="Helper\MouseLocation.cs" />
+    <Compile Include="Model\PointModel.cs" />
+    <Compile Include="Helper\PointRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -103,6 +104,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bin\Debug\My.ini" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

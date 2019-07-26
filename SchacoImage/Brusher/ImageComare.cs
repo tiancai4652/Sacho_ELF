@@ -10,6 +10,11 @@ namespace Brusher
 
     public class ImageComare
     {
+        static ImageComare()
+        {
+
+        }
+
         public static string Image1_3Item = @"Image\1_3Item.png";
         public static string Image2_Enter2Item = @"Image\2_Enter2Item.png";
         public static string Image3_Enter2Item = @"Image\3_Enter2Item.png";
@@ -29,6 +34,11 @@ namespace Brusher
         public static int W = 426;
         public static int H = 125;
 
+        public static int EscX = 2793;
+        public static int EscY = 389;
+        public static int EscW = 156;
+        public static int EscH = 298;
+
         public void Compare()
         {
             var ImageTarget = CaptureImage.CaptureImage.GetScreenByRegion(X, Y, W, H);
@@ -42,11 +52,11 @@ namespace Brusher
 
         public static void GetAndSaveESCImage()
         {
-            var image = CaptureImage.CaptureImage.GetScreenByRegion(2793, 389, 156, 298);
+            var image = CaptureImage.CaptureImage.GetScreenByRegion(EscX, EscY, EscW, EscH);
             CaptureImage.CaptureImage.SaveImage(ImageCurrentESC, image);
         }
     }
 
 
-    
+
 }

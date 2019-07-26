@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Brusher"
         mc:Ignorable="d"
-         Title="MainWindow" Height="400" Width="600" Closing="Window_Closing" >
+         Title="MainWindow" Height="500" Width="600" Closing="Window_Closing" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -51,7 +51,7 @@
                         <TextBlock Margin="5,0" VerticalAlignment="Center">Y:</TextBlock>
                         <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.StValueY}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
-                    <Button Grid.Row="2" Height="25" Width="80" Click="Button_Click">Set</Button>
+                    <Button Grid.Row="2" Height="25" Width="80" Click="Button_Click">移动到设置NPC位置</Button>
                 </Grid>
             </GroupBox>
 
@@ -80,40 +80,60 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <GroupBox Header="源图片位置">
+            <GroupBox Header="文字图片位置" >
                 <Grid>
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">X:</TextBlock>
-                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.X}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Name="X" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap" TextChanged="X_TextChanged"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">Y:</TextBlock>
-                        <TextBlock Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.Y}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Name="Y" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"  Grid.Row="2">
+                        <TextBlock Margin="5,0" VerticalAlignment="Center">W:</TextBlock>
+                        <TextBox Name="W" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <TextBlock Margin="5,0" VerticalAlignment="Center">H:</TextBlock>
+                        <TextBox Name="H" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                 </Grid>
             </GroupBox>
 
-            <GroupBox Header="比对图片位置" Grid.Column="1">
+            <GroupBox Header="Esc图形位置" Grid.Column="1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">X:</TextBlock>
-                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.StValueX}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Name="EscX" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1">
                         <TextBlock Margin="5,0" VerticalAlignment="Center">Y:</TextBlock>
-                        <TextBox Margin="5,0" VerticalAlignment="Center" Text="{Binding CurrentMousePoint.StValueY}" HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                        <TextBox Name="EscY" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap"  />
                     </StackPanel>
-                    <Button Grid.Row="2" Height="25" Width="80" Click="Button_Click">Set</Button>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <TextBlock Margin="5,0" VerticalAlignment="Center">W:</TextBlock>
+                        <TextBox Name="EscW" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="3">
+                        <TextBlock Margin="5,0" VerticalAlignment="Center">H:</TextBlock>
+                        <TextBox Name="EscH" Margin="5,0" VerticalAlignment="Center"  HorizontalAlignment="Left"  TextWrapping="Wrap"  />
+                    </StackPanel>
+                    <Button Grid.Row="4" Height="25" Width="80" Click="Button_Click_2" Margin="54,28,52,24">设置位置</Button>
                 </Grid>
             </GroupBox>
 
@@ -123,7 +143,7 @@
                         <RowDefinition Height="50"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button  Margin="5,0" Height="25" Width="75" HorizontalAlignment="Center" Click="Button_Click_1" >Start</Button>
+                    <Button  Margin="5,0" Height="25" Width="75" HorizontalAlignment="Center" Click="Button_Click_3" >Stop</Button>
 
                     <Grid Grid.Row="1">
                         <TextBox TextWrapping="WrapWithOverflow">

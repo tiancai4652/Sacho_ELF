@@ -55,6 +55,7 @@ namespace InputAction
             dd.btn(1);
             Thread.Sleep(MouseKeepDownDelay);
             dd.btn(2);
+            dd.btn(2);
             Thread.Sleep(AfterClickDelay);
         }
 

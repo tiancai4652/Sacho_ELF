@@ -42,6 +42,15 @@ namespace Brusher
                 }
             });
             this.DataContext = this;
+            X.Text = ImageComare.X.ToString();
+            Y.Text = ImageComare.Y.ToString();
+            W.Text = ImageComare.W.ToString();
+            H.Text = ImageComare.H.ToString();
+            EscX.Text = ImageComare.EscX.ToString();
+            EscY.Text = ImageComare.EscY.ToString();
+            EscW.Text = ImageComare.EscW.ToString();
+            EscH.Text = ImageComare.EscH.ToString();
+
         }
 
         Thread tr;
@@ -73,167 +82,210 @@ namespace Brusher
                 this.WindowState = WindowState.Minimized;
             }
 
-            Thread tr = new Thread(Run);
+            tr = new Thread(Run);
             tr.IsBackground = true;
             tr.Start();
         }
 
         void Run()
         {
-            while (true)
+            try
             {
-
-                InputAction.MouseMove.SetMouseScreenLocation(new System.Drawing.Point(CurrentMousePoint.StValueX, CurrentMousePoint.StValueY));
-                Thread.Sleep(500);
-                InputAction.DD_ACtion.MouseLeftClick();
-                Thread.Sleep(500);
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveCurrentImage();
-                Thread.Sleep(500);
-                ///跟第一个图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image1_3Item) < 0.0001)
-                if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 4, null))
+                while (true)
                 {
-                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
-                    Thread.Sleep(500);
+
+                    InputAction.MouseMove.SetMouseScreenLocation(new System.Drawing.Point(CurrentMousePoint.StValueX, CurrentMousePoint.StValueY));
+                    Thread.Sleep(200);
                     InputAction.DD_ACtion.MouseLeftClick();
+                    Thread.Sleep(200);
+
+                    ///移开鼠标
+                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    Thread.Sleep(200);
+                    ///截取当前图片
+                    ImageComare.GetAndSaveCurrentImage();
                     Thread.Sleep(500);
+                    ///跟第一个图片对比
+                    //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image1_3Item) < 0.0001)
+                    if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 4, null))
+                    {
+                        InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
+                        Thread.Sleep(200);
+                        InputAction.DD_ACtion.MouseLeftClick();
+                        Thread.Sleep(200);
+                    }
+
+                    Thread.Sleep(100);
+
+                    ///移开鼠标
+                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    Thread.Sleep(200);
+                    ///截取当前图片
+                    ImageComare.GetAndSaveCurrentImage();
+                    Thread.Sleep(500);
+                    ///跟第2个图片对比
+                    //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image2_Enter2Item) < 0.0001)
+                    List<string> list2 = new List<string>() { "要", "哪", "里", "弄", "到", "粘", "土", "呢" };
+                    if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, list2.ToArray()))
+                    {
+                        InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
+                        Thread.Sleep(200);
+                        InputAction.DD_ACtion.MouseLeftClick();
+                        Thread.Sleep(200);
+                    }
+                    Thread.Sleep(500);
+
+                    ///移开鼠标
+                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    Thread.Sleep(500);
+                    ///截取当前图片
+                    ImageComare.GetAndSaveCurrentImage();
+                    Thread.Sleep(500);
+                    ///跟第3个图片对比
+                    //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image3_Enter2Item) < 0.0001)
+                    List<string> list3 = new List<string>() { "明", "白", "了", "就", "来" };
+                    if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, list3.ToArray()))
+                    {
+                        InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
+                        Thread.Sleep(200);
+                        InputAction.DD_ACtion.MouseLeftClick();
+                        Thread.Sleep(200);
+                    }
+                    Thread.Sleep(500);
+
+                    ///移开鼠标
+                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    Thread.Sleep(500);
+                    ///截取当前图片
+                    ImageComare.GetAndSaveCurrentImage();
+                    Thread.Sleep(500);
+                    ///跟第4个图片对比
+                    //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image4_Enter2Item) < 0.0001)
+                    if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 1, null))
+                    {
+                        InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
+                        Thread.Sleep(200);
+                        InputAction.DD_ACtion.MouseLeftClick();
+                        Thread.Sleep(200);
+                    }
+                    Thread.Sleep(500);
+
+                    ///移开鼠标
+                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    Thread.Sleep(500);
+                    ///截取当前图片
+                    ImageComare.GetAndSaveCurrentImage();
+                    Thread.Sleep(500);
+                    ///跟第5个图片对比
+                    //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image5_Enter2Item) < 0.0001)
+                    if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 3, null))
+                    {
+                        InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
+                        Thread.Sleep(200);
+                        InputAction.DD_ACtion.MouseLeftClick();
+                        Thread.Sleep(200);
+                    }
+                    Thread.Sleep(500);
+
+                    ///移开鼠标
+                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    Thread.Sleep(500);
+                    ///截取当前图片
+                    ImageComare.GetAndSaveCurrentImage();
+                    Thread.Sleep(500);
+                    ///跟第6个图片对比
+                    //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image6_Enter3Item) < 0.0001)
+                    List<string> list6 = new List<string>() { "是", "的", "请", "开", "始", "吧" };
+                    if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, list6.ToArray()))
+                    {
+                        InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
+                        Thread.Sleep(200);
+                        InputAction.DD_ACtion.MouseLeftClick();
+                        Thread.Sleep(200);
+                    }
+                    Thread.Sleep(500);
+
+                    ///移开鼠标
+                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    Thread.Sleep(500);
+                    ///截取当前图片
+                    ImageComare.GetAndSaveCurrentImage();
+                    Thread.Sleep(500);
+                    ///跟第Wrong图片对比
+                    //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.ImageWrongImage) < 0.0001)
+                    List<string> listWrong = new List<string>() { "品", "茗", "赏", "器" };
+                    if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, listWrong.ToArray()))
+                    {
+                        InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
+                        Thread.Sleep(200);
+                        InputAction.DD_ACtion.MouseLeftClick();
+                        Thread.Sleep(200);
+                    }
+
+                    /////移开鼠标
+                    //InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
+                    //Thread.Sleep(500);
+                    /////截取当前图片
+                    //ImageComare.GetAndSaveESCImage();
+                    //Thread.Sleep(500);
+                    /////跟第esc图片对比
+                    ////if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrentESC, ImageComare.ImageESC) < 0.0001)
+                    //if (IdentifyImageByBaiduAI2.IdentifyByOverRowCount(ImageComare.ImageCurrent, 4))
+                    //{
+                    //    InputAction.DD_ACtion.Keyboard(Keys.Escape);
+                    //    Thread.Sleep(200);
+                    //}
+
+
+                    Thread.Sleep(1000 * 10);
+
                 }
-
-                Thread.Sleep(100);
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveCurrentImage();
-                Thread.Sleep(500);
-                ///跟第2个图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image2_Enter2Item) < 0.0001)
-                List<string> list2 = new List<string>() { "要", "哪", "里", "弄", "到", "粘", "土", "呢"};
-                if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, list2.ToArray()))
-                {
-                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
-                    Thread.Sleep(500);
-                    InputAction.DD_ACtion.MouseLeftClick();
-                    Thread.Sleep(500);
-                }
-                Thread.Sleep(500);
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveCurrentImage();
-                Thread.Sleep(500);
-                ///跟第3个图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image3_Enter2Item) < 0.0001)
-                List<string> list3 = new List<string>() { "明", "白", "了", "就", "来"};
-                if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, list3.ToArray()))
-                {
-                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
-                    Thread.Sleep(500);
-                    InputAction.DD_ACtion.MouseLeftClick();
-                    Thread.Sleep(500);
-                }
-                Thread.Sleep(500);
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveCurrentImage();
-                Thread.Sleep(500);
-                ///跟第4个图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image4_Enter2Item) < 0.0001)
-                if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 1, null))
-                {
-                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
-                    Thread.Sleep(500);
-                    InputAction.DD_ACtion.MouseLeftClick();
-                    Thread.Sleep(500);
-                }
-                Thread.Sleep(500);
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveCurrentImage();
-                Thread.Sleep(500);
-                ///跟第5个图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image5_Enter2Item) < 0.0001)
-                if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 3, null))
-                {
-                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
-                    Thread.Sleep(500);
-                    InputAction.DD_ACtion.MouseLeftClick();
-                    Thread.Sleep(500);
-                }
-                Thread.Sleep(500);
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveCurrentImage();
-                Thread.Sleep(500);
-                ///跟第6个图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.Image6_Enter3Item) < 0.0001)
-                List<string> list6 = new List<string>() { "是", "的", "请", "开", "始", "吧" };
-                if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, list6.ToArray()))
-                {
-                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
-                    Thread.Sleep(500);
-                    InputAction.DD_ACtion.MouseLeftClick();
-                    Thread.Sleep(500);
-                }
-                Thread.Sleep(500);
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveCurrentImage();
-                Thread.Sleep(500);
-                ///跟第Wrong图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrent, ImageComare.ImageWrongImage) < 0.0001)
-                List<string> listWrong = new List<string>() { "品", "茗", "赏", "器" };
-                if (IdentifyImageByBaiduAI2.Identify(ImageComare.ImageCurrent, 2, listWrong.ToArray()))
-                {
-                    InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
-                    Thread.Sleep(500);
-                    InputAction.DD_ACtion.MouseLeftClick();
-                    Thread.Sleep(500);
-                }
-
-                ///移开鼠标
-                InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
-                Thread.Sleep(500);
-                ///截取当前图片
-                ImageComare.GetAndSaveESCImage();
-                Thread.Sleep(500);
-                ///跟第esc图片对比
-                //if (IdentifyByOpenCV.CompareImageByHistogram(ImageComare.ImageCurrentESC, ImageComare.ImageESC) < 0.0001)
-                if (IdentifyImageByBaiduAI2.IdentifyByOverRowCount(ImageComare.ImageCurrent, 4))
-                {
-                    InputAction.DD_ACtion.Keyboard(Keys.Escape);
-                    Thread.Sleep(500);
-                }
-
-
-                Thread.Sleep(1000*7);
-
             }
-
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message + Environment.NewLine + ex.StackTrace);
+            }
 
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (tr != null && tr.ThreadState == ThreadState.Running)
+                {
+                    tr.Abort();
+                }
+            }
+            catch
+            { }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ImageComare.X = int.Parse(X.Text);
+                ImageComare.Y = int.Parse(Y.Text);
+                ImageComare.W = int.Parse(W.Text);
+                ImageComare.H = int.Parse(H.Text);
+                ImageComare.EscX = int.Parse(EscX.Text);
+                ImageComare.EscY = int.Parse(EscY.Text);
+                ImageComare.EscW = int.Parse(EscW.Text);
+                ImageComare.EscH = int.Parse(EscH.Text);
+            }
+            catch (Exception EX)
+            {
+                System.Windows.Forms.MessageBox.Show(EX.Message);
+            }
+        }
+
+        private void X_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             try
             {
