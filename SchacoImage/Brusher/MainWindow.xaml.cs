@@ -97,7 +97,7 @@ namespace Brusher
                     InputAction.MouseMove.SetMouseScreenLocation(new System.Drawing.Point(CurrentMousePoint.StValueX, CurrentMousePoint.StValueY));
                     Thread.Sleep(200);
                     InputAction.DD_ACtion.MouseLeftClick();
-                    Thread.Sleep(200);
+                    Thread.Sleep(1500);
 
                     ///移开鼠标
                     InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.OutItem);
@@ -112,7 +112,7 @@ namespace Brusher
                         InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
                         Thread.Sleep(200);
                         InputAction.DD_ACtion.MouseLeftClick();
-                        Thread.Sleep(200);
+                        Thread.Sleep(1500);
                     }
 
                     Thread.Sleep(100);
@@ -131,7 +131,7 @@ namespace Brusher
                         InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
                         Thread.Sleep(200);
                         InputAction.DD_ACtion.MouseLeftClick();
-                        Thread.Sleep(200);
+                        Thread.Sleep(1500);
                     }
                     Thread.Sleep(500);
 
@@ -149,7 +149,7 @@ namespace Brusher
                         InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
                         Thread.Sleep(200);
                         InputAction.DD_ACtion.MouseLeftClick();
-                        Thread.Sleep(200);
+                        Thread.Sleep(1500);
                     }
                     Thread.Sleep(500);
 
@@ -166,7 +166,7 @@ namespace Brusher
                         InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
                         Thread.Sleep(200);
                         InputAction.DD_ACtion.MouseLeftClick();
-                        Thread.Sleep(200);
+                        Thread.Sleep(1500);
                     }
                     Thread.Sleep(500);
 
@@ -183,7 +183,7 @@ namespace Brusher
                         InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
                         Thread.Sleep(200);
                         InputAction.DD_ACtion.MouseLeftClick();
-                        Thread.Sleep(200);
+                        Thread.Sleep(1500);
                     }
                     Thread.Sleep(500);
 
@@ -201,7 +201,7 @@ namespace Brusher
                         InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item1);
                         Thread.Sleep(200);
                         InputAction.DD_ACtion.MouseLeftClick();
-                        Thread.Sleep(200);
+                        Thread.Sleep(1500);
                     }
                     Thread.Sleep(500);
 
@@ -219,7 +219,7 @@ namespace Brusher
                         InputAction.MouseMove.SetMouseScreenLocation(ItemLocation.Item2);
                         Thread.Sleep(200);
                         InputAction.DD_ACtion.MouseLeftClick();
-                        Thread.Sleep(200);
+                        Thread.Sleep(1500);
                     }
 
                     /////移开鼠标
